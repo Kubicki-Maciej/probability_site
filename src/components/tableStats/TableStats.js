@@ -30,7 +30,7 @@ export default function TableStats({tableSetFunction}) {
     };
     const handleToDamageChange = (e) => {
       const value = parseInt(e.target.value);
-      if (!isNaN(value) && value > 1) {
+      if (!isNaN(value) && value > 0) {
         setDamage(value);
       }
     };

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 // import SingleChart from './SingleChart'
 import SingleChart from './SingleChart'
+import TableToKill from './TableToKill'
 import TableStats from '../tableStats/TableStats'
 
 class Dice{
@@ -129,11 +130,15 @@ export default function ChartComponenent() {
     <div className='site'>
         <TableStats tableSetFunction={setupTableStats}/>
 
+      
+        {createHitBool ? <TableToKill stats={tableStats} diceOjbect={Dice}/> : ''}
+
         {createHitBool ? <SingleChart chartLabelData={toHitDicesLabel} chartProbabilityData={toHitDicesProbability} tableName={'To Hit'} indexPicker={getIndexHitTable}/> : ''}
 
         {createTableToWound ? <SingleChart chartLabelData={toWoundDicesLabel} chartProbabilityData={toWoundDicesProbability} tableName={'To Wound'} indexPicker={getIndexWoundTable}/> : ''}
 
         {createTableToSave ? <SingleChart chartLabelData={toSaveDicesLabel} chartProbabilityData={toSaveDicesProbability} tableName={'To Save'}/> : ''}
+
     </div>
   )
 }

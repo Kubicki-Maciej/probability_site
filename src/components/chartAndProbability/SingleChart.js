@@ -47,8 +47,11 @@ export default function SingleChart(
 
   function sumProbabilityReverseLabel(index){
     let summ =0
+    let list = chartProbabilityData
+    list.reverse()
     for(let i=index;i < chartLabelData.length; i++){
-      summ = summ + chartProbabilityData.reverse()[i]
+      summ = summ + list[i]
+      
     }
     return summ
   }
@@ -114,7 +117,7 @@ export default function SingleChart(
                   if (index == 0){
                     return `nie obronienie żadnej kostki: ${chartProbabilityData[index].toFixed(2)}`
                   }
-                  return `prawdopodobieństwo wybronienia  ${index} kości wynosi:  ${sumProbabilityLabel(index).toFixed(2)}`
+                  return `prawdopodobieństwo wybronienia  ${index} kości wynosi ${chartProbabilityData[index].toFixed(2)} a łacznie  ${sumProbabilityLabel(index).toFixed(2)}`
                 }
                 else{
                   if (index == 0){

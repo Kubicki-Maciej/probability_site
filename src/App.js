@@ -5,7 +5,8 @@ import ChartComponenent from './components/chartAndProbability/ChartComponenent'
 function App() {
   return (
     <div className="App">
-      <ChartComponenent/>
+      test
+      {/* <ChartComponenent/> */}
     </div>
   );
 }
